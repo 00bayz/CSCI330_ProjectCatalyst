@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace CSCI330_ProjectCatalyst
 {
-    public partial class Form1 : Form
+    public partial class CatalystMain : Form
     {
-        public Form1()
+        public CatalystMain()
         {
             InitializeComponent();
         }
