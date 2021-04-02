@@ -40,7 +40,7 @@ namespace CSCI330_ProjectCatalyst
             // 
             this.TodoButton.Font = new System.Drawing.Font("Liberation Mono", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.TodoButton.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.TodoButton.Location = new System.Drawing.Point(41, 32);
+            this.TodoButton.Location = new System.Drawing.Point(32, 16);
             this.TodoButton.Name = "TodoButton";
             this.TodoButton.Size = new System.Drawing.Size(160, 60);
             this.TodoButton.TabIndex = 0;
@@ -51,7 +51,7 @@ namespace CSCI330_ProjectCatalyst
             // 
             this.PomodoroButton.Font = new System.Drawing.Font("Liberation Mono", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.PomodoroButton.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.PomodoroButton.Location = new System.Drawing.Point(41, 113);
+            this.PomodoroButton.Location = new System.Drawing.Point(32, 92);
             this.PomodoroButton.Name = "PomodoroButton";
             this.PomodoroButton.Size = new System.Drawing.Size(160, 60);
             this.PomodoroButton.TabIndex = 1;
@@ -62,7 +62,7 @@ namespace CSCI330_ProjectCatalyst
             // 
             this.CalendarButton.Font = new System.Drawing.Font("Liberation Mono", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.CalendarButton.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.CalendarButton.Location = new System.Drawing.Point(41, 202);
+            this.CalendarButton.Location = new System.Drawing.Point(32, 168);
             this.CalendarButton.Name = "CalendarButton";
             this.CalendarButton.Size = new System.Drawing.Size(160, 60);
             this.CalendarButton.TabIndex = 2;
@@ -73,7 +73,7 @@ namespace CSCI330_ProjectCatalyst
             // 
             this.TrackerButton.Font = new System.Drawing.Font("Liberation Mono", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.TrackerButton.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.TrackerButton.Location = new System.Drawing.Point(41, 291);
+            this.TrackerButton.Location = new System.Drawing.Point(32, 244);
             this.TrackerButton.Name = "TrackerButton";
             this.TrackerButton.Size = new System.Drawing.Size(160, 60);
             this.TrackerButton.TabIndex = 3;
@@ -84,7 +84,7 @@ namespace CSCI330_ProjectCatalyst
             // 
             this.RemindersButton.Font = new System.Drawing.Font("Liberation Mono", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.RemindersButton.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.RemindersButton.Location = new System.Drawing.Point(41, 384);
+            this.RemindersButton.Location = new System.Drawing.Point(32, 320);
             this.RemindersButton.Name = "RemindersButton";
             this.RemindersButton.Size = new System.Drawing.Size(160, 60);
             this.RemindersButton.TabIndex = 4;
@@ -96,7 +96,7 @@ namespace CSCI330_ProjectCatalyst
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.ClientSize = new System.Drawing.Size(1067, 519);
+            this.ClientSize = new System.Drawing.Size(224, 401);
             this.Controls.Add(this.RemindersButton);
             this.Controls.Add(this.TrackerButton);
             this.Controls.Add(this.CalendarButton);
@@ -105,6 +105,8 @@ namespace CSCI330_ProjectCatalyst
             this.Font = new System.Drawing.Font("Liberation Mono", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.MaximumSize = new System.Drawing.Size(240, 440);
+            this.MinimumSize = new System.Drawing.Size(240, 440);
             this.Name = "CatalystMain";
             this.Text = "Catalyst | Home";
             this.ResumeLayout(false);
