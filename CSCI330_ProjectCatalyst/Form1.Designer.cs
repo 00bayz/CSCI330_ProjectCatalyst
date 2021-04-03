@@ -46,6 +46,7 @@ namespace CSCI330_ProjectCatalyst
             this.TodoButton.TabIndex = 0;
             this.TodoButton.Text = "To-Do List";
             this.TodoButton.UseVisualStyleBackColor = true;
+            this.TodoButton.Click += new System.EventHandler(this.TodoButton_Click);
             // 
             // PomodoroButton
             // 
@@ -57,6 +58,7 @@ namespace CSCI330_ProjectCatalyst
             this.PomodoroButton.TabIndex = 1;
             this.PomodoroButton.Text = "Pomodoro Timer";
             this.PomodoroButton.UseVisualStyleBackColor = true;
+            this.PomodoroButton.Click += new System.EventHandler(this.PomodoroButton_Click);
             // 
             // CalendarButton
             // 
@@ -68,6 +70,7 @@ namespace CSCI330_ProjectCatalyst
             this.CalendarButton.TabIndex = 2;
             this.CalendarButton.Text = "Calendar";
             this.CalendarButton.UseVisualStyleBackColor = true;
+            this.CalendarButton.Click += new System.EventHandler(this.CalendarButton_Click);
             // 
             // TrackerButton
             // 
@@ -79,6 +82,7 @@ namespace CSCI330_ProjectCatalyst
             this.TrackerButton.TabIndex = 3;
             this.TrackerButton.Text = "Habit Tracker";
             this.TrackerButton.UseVisualStyleBackColor = true;
+            this.TrackerButton.Click += new System.EventHandler(this.TrackerButton_Click);
             // 
             // RemindersButton
             // 
@@ -90,6 +94,7 @@ namespace CSCI330_ProjectCatalyst
             this.RemindersButton.TabIndex = 4;
             this.RemindersButton.Text = "Reminders";
             this.RemindersButton.UseVisualStyleBackColor = true;
+            this.RemindersButton.Click += new System.EventHandler(this.RemindersButton_Click);
             // 
             // CatalystMain
             // 
