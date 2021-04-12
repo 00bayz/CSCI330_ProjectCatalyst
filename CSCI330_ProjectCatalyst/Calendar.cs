@@ -16,5 +16,20 @@ namespace CSCI330_ProjectCatalyst
         {
             InitializeComponent();
         }
+
+        private void CalenderDisplay_DateChanged(object sender, DateRangeEventArgs e)
+        {
+            EntryText.Text = CalenderDisplay.SelectionStart.ToString();
+        }
+
+        private void Calendar_Load(object sender, EventArgs e)
+        {
+            EntryText.Text = CalenderDisplay.SelectionStart.ToString();
+        }
+
+        private void SearchButton_Click(object sender, EventArgs e)
+        {
+            CalenderDisplay.SelectionStart = DateTime.Parse(EntryText.Text);
+        }
     }
 }

@@ -115,6 +115,9 @@
       <DependentUpon>TodoList.cs</DependentUpon>
     </Compile>
     <Compile Include="TodoModel.cs" />
+    <EmbeddedResource Include="Calendar.resx">
+      <DependentUpon>Calendar.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
