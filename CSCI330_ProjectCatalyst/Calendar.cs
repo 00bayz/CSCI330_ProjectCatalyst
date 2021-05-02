@@ -26,7 +26,6 @@ namespace CSCI330_ProjectCatalyst
         Dictionary<string, List<CalendarInfo>> cachedJsonInfo;
         List<CalendarInfo> calenderData = new List<CalendarInfo>();
         CalendarInfo selectedInfo;
-        bool listeningForChange = false;
 
         public Calendar()
         {
@@ -163,6 +162,11 @@ namespace CSCI330_ProjectCatalyst
 
                 RefreshListView();
             }
+        }
+
+        private void ReloadButton_Click(object sender, EventArgs e)
+        {
+            LoadScheduleData(defaultLocation, EntryText.Text);
         }
     }
 }

@@ -49,6 +49,7 @@ namespace CSCI330_ProjectCatalyst
             this.ToLabel = new System.Windows.Forms.Label();
             this.DetailsLabel = new System.Windows.Forms.Label();
             this.SyncButton = new System.Windows.Forms.Button();
+            this.ReloadButton = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -116,6 +117,7 @@ namespace CSCI330_ProjectCatalyst
             // 
             // groupBox2
             // 
+            this.groupBox2.Controls.Add(this.ReloadButton);
             this.groupBox2.Controls.Add(this.SyncButton);
             this.groupBox2.Controls.Add(this.RemoveButton);
             this.groupBox2.Controls.Add(this.AddButton);
@@ -264,6 +266,17 @@ namespace CSCI330_ProjectCatalyst
             this.SyncButton.UseVisualStyleBackColor = true;
             this.SyncButton.Click += new System.EventHandler(this.SyncSelectedInfo);
             // 
+            // ReloadButton
+            // 
+            this.ReloadButton.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.ReloadButton.Location = new System.Drawing.Point(102, 74);
+            this.ReloadButton.Name = "ReloadButton";
+            this.ReloadButton.Size = new System.Drawing.Size(90, 30);
+            this.ReloadButton.TabIndex = 9;
+            this.ReloadButton.Text = "Reload";
+            this.ReloadButton.UseVisualStyleBackColor = true;
+            this.ReloadButton.Click += new System.EventHandler(this.ReloadButton_Click);
+            // 
             // Calendar
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 21F);
@@ -317,5 +330,6 @@ namespace CSCI330_ProjectCatalyst
         private System.Windows.Forms.Label ToLabel;
         private System.Windows.Forms.Label DetailsLabel;
         private System.Windows.Forms.Button SyncButton;
+        private System.Windows.Forms.Button ReloadButton;
     }
 }
