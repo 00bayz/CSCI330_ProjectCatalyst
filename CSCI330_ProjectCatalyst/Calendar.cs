@@ -22,7 +22,8 @@ namespace CSCI330_ProjectCatalyst
             public string to { get; set; }
         }
 
-        string defaultLocation = Environment.CurrentDirectory + Path.DirectorySeparatorChar + "calendar" + Path.DirectorySeparatorChar + "data.json";
+        static string moduleLocation = Environment.CurrentDirectory + Path.DirectorySeparatorChar + "calendar";
+        static string dataLocation = moduleLocation + Path.DirectorySeparatorChar + "data.json";
         Dictionary<string, List<CalendarInfo>> cachedJsonInfo;
         List<CalendarInfo> calenderData = new List<CalendarInfo>();
         CalendarInfo selectedInfo;
@@ -35,13 +36,13 @@ namespace CSCI330_ProjectCatalyst
         private void CalenderDisplay_DateChanged(object sender, DateRangeEventArgs e)
         {
             EntryText.Text = CalenderDisplay.SelectionStart.ToString("MM/dd/yyyy");
-            LoadScheduleData(defaultLocation, EntryText.Text);
+            LoadScheduleData(dataLocation, EntryText.Text);
         }
 
         private void Calendar_Load(object sender, EventArgs e)
         {
             EntryText.Text = CalenderDisplay.SelectionStart.ToString("MM/dd/yyyy");
-            LoadScheduleData(defaultLocation, EntryText.Text);
+            LoadScheduleData(dataLocation, EntryText.Text);
         }
 
         private void SearchButton_Click(object sender, EventArgs e)
@@ -58,7 +59,14 @@ namespace CSCI330_ProjectCatalyst
         {
             calenderData.Clear();
 
-            cachedJsonInfo = JsonConvert.DeserializeObject<Dictionary<string, List<CalendarInfo>>>(File.ReadAllText(location));
+            string fileData = @"{}";
+
+            if (File.Exists(location))
+            {
+                fileData = File.ReadAllText(location);
+            }
+
+            cachedJsonInfo = JsonConvert.DeserializeObject<Dictionary<string, List<CalendarInfo>>>(fileData);
             if (cachedJsonInfo.ContainsKey(date))
             {
                 cachedJsonInfo.TryGetValue(date, out calenderData);
@@ -71,6 +79,10 @@ namespace CSCI330_ProjectCatalyst
         {
             Console.WriteLine("Writing for date {0}: {1} total values", date, info.Count);
             cachedJsonInfo[date] = info;
+            if (!Directory.Exists(moduleLocation))
+            {
+                Directory.CreateDirectory(moduleLocation);
+            }
             using (StreamWriter file = File.CreateText(location))
             {
                 JsonSerializer serializer = new JsonSerializer();
@@ -100,7 +112,7 @@ namespace CSCI330_ProjectCatalyst
 
         private void SaveAllButton_Click(object sender, EventArgs e)
         {
-            SaveSchedulerData(defaultLocation, EntryText.Text, calenderData);
+            SaveSchedulerData(dataLocation, EntryText.Text, calenderData);
         }
 
         private void SchedulerList_SelectedValueChanged(object sender, EventArgs e)
@@ -166,7 +178,7 @@ namespace CSCI330_ProjectCatalyst
 
         private void ReloadButton_Click(object sender, EventArgs e)
         {
-            LoadScheduleData(defaultLocation, EntryText.Text);
+            LoadScheduleData(dataLocation, EntryText.Text);
         }
     }
 }
