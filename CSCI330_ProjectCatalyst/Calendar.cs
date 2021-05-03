@@ -167,9 +167,9 @@ namespace CSCI330_ProjectCatalyst
             if (selectedInfo != null)
             {
                 calenderData.Remove(selectedInfo);
-                selectedInfo.details = DetailsText.Text;
-                selectedInfo.from = FromText.Text;
-                selectedInfo.to = ToText.Text;
+                selectedInfo.details = DetailsText.Text ?? selectedInfo.details;
+                selectedInfo.from = FromText.Text ?? selectedInfo.from;
+                selectedInfo.to = ToText.Text ?? selectedInfo.to;
                 calenderData.Add(selectedInfo);
 
                 RefreshListView();
