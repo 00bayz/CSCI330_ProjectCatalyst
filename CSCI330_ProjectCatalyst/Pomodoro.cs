@@ -14,10 +14,18 @@ namespace CSCI330_ProjectCatalyst
     {
         private struct Settings
         {
-            private static int _pomodoroDur = 25;
-            private static int _shortBreakDur = 5;
-            private static int _longBreakDur = 15;
-            private static int _longBreakInterval = 4;
+            private static int _pomodoroDur;
+            private static int _shortBreakDur;
+            private static int _longBreakDur;
+            private static int _longBreakInterval;
+
+            public Settings(int a, int b, int c, int d)
+            {
+                _pomodoroDur = a;
+                _shortBreakDur = b;
+                _longBreakDur = c;
+                _longBreakInterval = d;
+            }
             public int PomodoroDur
             {
                 get
@@ -74,20 +82,19 @@ namespace CSCI330_ProjectCatalyst
             LongBreak = 2
         }
 
+        private const int DEF_POMODORO_DUR = 25;
+        private const int DEF_SHORT_BREAK_DUR = 5;
+        private const int DEF_LONG_BREAK_DUR = 15;
+        private const int DEF_INTERVAL = 4;
         private static DateTime StartTime;
         private static DateTime Stoptime;
         private static int ElapsedMins = 0;
         private static int ElapsedSecs = 0;
-        private static Settings CurrentSettings = new Settings();
+        private static Settings CurrentSettings = new Settings(DEF_POMODORO_DUR, DEF_SHORT_BREAK_DUR, DEF_LONG_BREAK_DUR, DEF_INTERVAL);
 
         public Pomodoro()
         {
             InitializeComponent();
-            SetDefaultSettings();
-        }
-
-        private void SetDefaultSettings()
-        {
             SetPomNUD.Value = CurrentSettings.PomodoroDur;
             SetShortNUD.Value = CurrentSettings.ShortBreakDur;
             SetLongNUD.Value = CurrentSettings.LongBreakDur;
