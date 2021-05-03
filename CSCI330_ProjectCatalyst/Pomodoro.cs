@@ -18,7 +18,7 @@ namespace CSCI330_ProjectCatalyst
             private static int _shortBreakDur = 5;
             private static int _longBreakDur = 15;
             private static int _longBreakInterval = 4;
-            public static int PomodoroDur
+            public int PomodoroDur
             {
                 get
                 {
@@ -30,7 +30,7 @@ namespace CSCI330_ProjectCatalyst
                 }
             }
 
-            public static int ShortBreakDur
+            public int ShortBreakDur
             {
                 get
                 {
@@ -42,7 +42,7 @@ namespace CSCI330_ProjectCatalyst
                 }
             }
 
-            public static int LongBreakDur
+            public int LongBreakDur
             {
                 get
                 {
@@ -54,7 +54,7 @@ namespace CSCI330_ProjectCatalyst
                 }
             }
 
-            public static int LongBreakInterval
+            public int LongBreakInterval
             {
                 get
                 {
@@ -67,10 +67,18 @@ namespace CSCI330_ProjectCatalyst
             }
         }
 
+        private enum Status
+        {
+            Pomodoro = 0,
+            ShortBreak = 1,
+            LongBreak = 2
+        }
+
         private static DateTime StartTime;
         private static DateTime Stoptime;
         private static int ElapsedMins = 0;
         private static int ElapsedSecs = 0;
+        private static Settings CurrentSettings = new Settings();
 
         public Pomodoro()
         {
@@ -80,20 +88,41 @@ namespace CSCI330_ProjectCatalyst
 
         private void SetDefaultSettings()
         {
-            SetPomNUD.Value = Settings.PomodoroDur;
-            SetShortNUD.Value = Settings.ShortBreakDur;
-            SetLongNUD.Value = Settings.LongBreakDur;
-            SetIntervalNUD.Value = Settings.LongBreakInterval;
+            SetPomNUD.Value = CurrentSettings.PomodoroDur;
+            SetShortNUD.Value = CurrentSettings.ShortBreakDur;
+            SetLongNUD.Value = CurrentSettings.LongBreakDur;
+            SetIntervalNUD.Value = CurrentSettings.LongBreakInterval;
         }
 
         private int MinutesReminaing()
         {
-            return Settings.PomodoroDur - ElapsedMins;
+            return CurrentSettings.PomodoroDur - ElapsedMins;
         }
 
         private int SecondsRemaining()
         {
-            return ((Settings.PomodoroDur * 60) - ElapsedSecs) % 60;
+            return ((CurrentSettings.PomodoroDur * 60) - ElapsedSecs) % 60;
+        }
+
+        private void SetPomNUD_ValueChanged(object sender, EventArgs e)
+        {
+            CurrentSettings.PomodoroDur = Convert.ToInt32(SetPomNUD.Value);
+            PomTimerDisplayLabel.Text = $"{CurrentSettings.PomodoroDur.ToString()}:00";
+        }
+
+        private void SetShortNUD_ValueChanged(object sender, EventArgs e)
+        {
+            CurrentSettings.ShortBreakDur = Convert.ToInt32(SetShortNUD.Value);
+        }
+
+        private void SetLongNUD_ValueChanged(object sender, EventArgs e)
+        {
+            CurrentSettings.LongBreakDur = Convert.ToInt32(SetLongNUD.Value);
+        }
+
+        private void SetIntervalNUD_ValueChanged(object sender, EventArgs e)
+        {
+            CurrentSettings.LongBreakInterval = Convert.ToInt32(SetIntervalNUD.Value);
         }
     }
 }

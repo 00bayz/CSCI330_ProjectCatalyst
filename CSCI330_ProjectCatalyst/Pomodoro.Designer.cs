@@ -77,6 +77,7 @@ namespace CSCI330_ProjectCatalyst
             this.StatusLabel.Size = new System.Drawing.Size(407, 20);
             this.StatusLabel.TabIndex = 3;
             this.StatusLabel.Text = "Pomodoro";
+            this.StatusLabel.Visible = false;
             // 
             // BtnPauseResume
             // 
@@ -131,10 +132,26 @@ namespace CSCI330_ProjectCatalyst
             // 
             this.SetIntervalNUD.Font = new System.Drawing.Font("Liberation Mono", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.SetIntervalNUD.Location = new System.Drawing.Point(36, 400);
+            this.SetIntervalNUD.Maximum = new decimal(new int[] {
+            60,
+            0,
+            0,
+            0});
+            this.SetIntervalNUD.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
             this.SetIntervalNUD.Name = "SetIntervalNUD";
             this.SetIntervalNUD.Size = new System.Drawing.Size(180, 31);
             this.SetIntervalNUD.TabIndex = 7;
             this.SetIntervalNUD.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.SetIntervalNUD.Value = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            this.SetIntervalNUD.ValueChanged += new System.EventHandler(this.SetIntervalNUD_ValueChanged);
             // 
             // SetIntervalLabel
             // 
@@ -150,10 +167,26 @@ namespace CSCI330_ProjectCatalyst
             // 
             this.SetLongNUD.Font = new System.Drawing.Font("Liberation Mono", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.SetLongNUD.Location = new System.Drawing.Point(36, 290);
+            this.SetLongNUD.Maximum = new decimal(new int[] {
+            30,
+            0,
+            0,
+            0});
+            this.SetLongNUD.Minimum = new decimal(new int[] {
+            15,
+            0,
+            0,
+            0});
             this.SetLongNUD.Name = "SetLongNUD";
             this.SetLongNUD.Size = new System.Drawing.Size(180, 31);
             this.SetLongNUD.TabIndex = 5;
             this.SetLongNUD.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.SetLongNUD.Value = new decimal(new int[] {
+            15,
+            0,
+            0,
+            0});
+            this.SetLongNUD.ValueChanged += new System.EventHandler(this.SetLongNUD_ValueChanged);
             // 
             // SetLongLabel
             // 
@@ -169,10 +202,26 @@ namespace CSCI330_ProjectCatalyst
             // 
             this.SetShortNUD.Font = new System.Drawing.Font("Liberation Mono", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.SetShortNUD.Location = new System.Drawing.Point(36, 180);
+            this.SetShortNUD.Maximum = new decimal(new int[] {
+            15,
+            0,
+            0,
+            0});
+            this.SetShortNUD.Minimum = new decimal(new int[] {
+            5,
+            0,
+            0,
+            0});
             this.SetShortNUD.Name = "SetShortNUD";
             this.SetShortNUD.Size = new System.Drawing.Size(180, 31);
             this.SetShortNUD.TabIndex = 3;
             this.SetShortNUD.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.SetShortNUD.Value = new decimal(new int[] {
+            5,
+            0,
+            0,
+            0});
+            this.SetShortNUD.ValueChanged += new System.EventHandler(this.SetShortNUD_ValueChanged);
             // 
             // SetShortLabel
             // 
@@ -188,10 +237,26 @@ namespace CSCI330_ProjectCatalyst
             // 
             this.SetPomNUD.Font = new System.Drawing.Font("Liberation Mono", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.SetPomNUD.Location = new System.Drawing.Point(36, 70);
+            this.SetPomNUD.Maximum = new decimal(new int[] {
+            90,
+            0,
+            0,
+            0});
+            this.SetPomNUD.Minimum = new decimal(new int[] {
+            25,
+            0,
+            0,
+            0});
             this.SetPomNUD.Name = "SetPomNUD";
             this.SetPomNUD.Size = new System.Drawing.Size(180, 31);
             this.SetPomNUD.TabIndex = 1;
             this.SetPomNUD.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.SetPomNUD.Value = new decimal(new int[] {
+            25,
+            0,
+            0,
+            0});
+            this.SetPomNUD.ValueChanged += new System.EventHandler(this.SetPomNUD_ValueChanged);
             // 
             // SetPomLabel
             // 
