@@ -38,7 +38,8 @@ namespace CSCI330_ProjectCatalyst
             // 
             // TodoButton
             // 
-            this.TodoButton.Font = new System.Drawing.Font("Liberation Mono", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TodoButton.Enabled = false;
+            this.TodoButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.TodoButton.ForeColor = System.Drawing.SystemColors.ControlText;
             this.TodoButton.Location = new System.Drawing.Point(32, 16);
             this.TodoButton.Name = "TodoButton";
@@ -50,7 +51,7 @@ namespace CSCI330_ProjectCatalyst
             // 
             // PomodoroButton
             // 
-            this.PomodoroButton.Font = new System.Drawing.Font("Liberation Mono", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.PomodoroButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.PomodoroButton.ForeColor = System.Drawing.SystemColors.ControlText;
             this.PomodoroButton.Location = new System.Drawing.Point(32, 92);
             this.PomodoroButton.Name = "PomodoroButton";
@@ -62,7 +63,7 @@ namespace CSCI330_ProjectCatalyst
             // 
             // CalendarButton
             // 
-            this.CalendarButton.Font = new System.Drawing.Font("Liberation Mono", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.CalendarButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.CalendarButton.ForeColor = System.Drawing.SystemColors.ControlText;
             this.CalendarButton.Location = new System.Drawing.Point(32, 168);
             this.CalendarButton.Name = "CalendarButton";
@@ -74,7 +75,8 @@ namespace CSCI330_ProjectCatalyst
             // 
             // TrackerButton
             // 
-            this.TrackerButton.Font = new System.Drawing.Font("Liberation Mono", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TrackerButton.Enabled = false;
+            this.TrackerButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.TrackerButton.ForeColor = System.Drawing.SystemColors.ControlText;
             this.TrackerButton.Location = new System.Drawing.Point(32, 244);
             this.TrackerButton.Name = "TrackerButton";
@@ -86,7 +88,8 @@ namespace CSCI330_ProjectCatalyst
             // 
             // RemindersButton
             // 
-            this.RemindersButton.Font = new System.Drawing.Font("Liberation Mono", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.RemindersButton.Enabled = false;
+            this.RemindersButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.RemindersButton.ForeColor = System.Drawing.SystemColors.ControlText;
             this.RemindersButton.Location = new System.Drawing.Point(32, 320);
             this.RemindersButton.Name = "RemindersButton";
@@ -98,7 +101,7 @@ namespace CSCI330_ProjectCatalyst
             // 
             // CatalystMain
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.ClientSize = new System.Drawing.Size(224, 401);
@@ -107,7 +110,7 @@ namespace CSCI330_ProjectCatalyst
             this.Controls.Add(this.CalendarButton);
             this.Controls.Add(this.PomodoroButton);
             this.Controls.Add(this.TodoButton);
-            this.Font = new System.Drawing.Font("Liberation Mono", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.MaximumSize = new System.Drawing.Size(240, 440);
