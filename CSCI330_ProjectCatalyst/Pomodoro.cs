@@ -212,11 +212,15 @@ namespace CSCI330_ProjectCatalyst
 
         private void UpdateStatus()
         {
-            if (StatusCount == 1 && PomodoroCount == CurrentSettings.LongBreakInterval)
+            if (StatusCount == 0 && PomodoroCount % CurrentSettings.LongBreakInterval == 0)
             {
                 StatusCount = 2;
             }
-            else if (StatusCount >= 2)
+            else if (StatusCount == 1 && PomodoroCount % CurrentSettings.LongBreakInterval != 0)
+            {
+                StatusCount = 0;
+            }
+            else if (StatusCount == 2)
             {
                 StatusCount = 0;
             }
@@ -236,10 +240,12 @@ namespace CSCI330_ProjectCatalyst
                 if (Durations[0] <= 0)
                 {
                     Stop();
+                    PomodoroCount++;
                     ToggleBtnStartPauseText(IsRunning);
                     ToggleBtnResetVisibility(IsRunning);
                     UpdateStatus();
                     Durations[0] = CurrentSettings.PomodoroDur * 60;
+                    MessageBox.Show($"You have completed {PomodoroCount} Pomodoro.", "Great Job!");
                 }
             }
             else if (StatusCount == 1)      // SHORT BREAK
@@ -252,7 +258,8 @@ namespace CSCI330_ProjectCatalyst
                     ToggleBtnStartPauseText(IsRunning);
                     ToggleBtnResetVisibility(IsRunning);
                     UpdateStatus();
-                    Durations[1] = CurrentSettings.PomodoroDur * 60;
+                    Durations[1] = CurrentSettings.ShortBreakDur * 60;
+                    MessageBox.Show($"End of {Durations[1] / 60} minutes Short Break.", "Break Over");
                 }
             } else if (StatusCount == 2)    // LONG BREAK
             {
@@ -264,7 +271,8 @@ namespace CSCI330_ProjectCatalyst
                     ToggleBtnStartPauseText(IsRunning);
                     ToggleBtnResetVisibility(IsRunning);
                     UpdateStatus();
-                    Durations[2] = CurrentSettings.PomodoroDur * 60;
+                    Durations[2] = CurrentSettings.LongBreakDur * 60;
+                    MessageBox.Show($"End of {Durations[2] / 60} minutes Long Break.", "Break Over");
                 }
             }
         }

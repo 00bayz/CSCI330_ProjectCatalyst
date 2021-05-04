@@ -274,6 +274,7 @@ namespace CSCI330_ProjectCatalyst
             // 
             // Timer
             // 
+            this.Timer.Interval = 10;
             this.Timer.Tick += new System.EventHandler(this.Timer_Tick);
             // 
             // Pomodoro
