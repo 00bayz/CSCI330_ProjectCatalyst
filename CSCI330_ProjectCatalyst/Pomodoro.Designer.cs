@@ -89,6 +89,7 @@ namespace CSCI330_ProjectCatalyst
             this.BtnPauseResume.Text = "Pause";
             this.BtnPauseResume.UseVisualStyleBackColor = true;
             this.BtnPauseResume.Visible = false;
+            this.BtnPauseResume.Click += new System.EventHandler(this.BtnPauseResume_Click);
             // 
             // BtnStartStop
             // 
@@ -99,6 +100,7 @@ namespace CSCI330_ProjectCatalyst
             this.BtnStartStop.TabIndex = 1;
             this.BtnStartStop.Text = "Start";
             this.BtnStartStop.UseVisualStyleBackColor = true;
+            this.BtnStartStop.Click += new System.EventHandler(this.BtnStartStop_Click);
             // 
             // PomTimerDisplayLabel
             // 
@@ -243,7 +245,7 @@ namespace CSCI330_ProjectCatalyst
             0,
             0});
             this.SetPomNUD.Minimum = new decimal(new int[] {
-            25,
+            1,
             0,
             0,
             0});
@@ -256,6 +258,7 @@ namespace CSCI330_ProjectCatalyst
             0,
             0,
             0});
+            this.SetPomNUD.TextChanged += new System.EventHandler(this.SetPomNUD_TextChanged);
             this.SetPomNUD.ValueChanged += new System.EventHandler(this.SetPomNUD_ValueChanged);
             // 
             // SetPomLabel
@@ -271,6 +274,7 @@ namespace CSCI330_ProjectCatalyst
             // Timer
             // 
             this.Timer.Interval = 1000;
+            this.Timer.Tick += new System.EventHandler(this.Timer_Tick);
             // 
             // Pomodoro
             // 
