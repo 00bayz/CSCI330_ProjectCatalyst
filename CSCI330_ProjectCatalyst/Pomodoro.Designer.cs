@@ -32,8 +32,8 @@ namespace CSCI330_ProjectCatalyst
             this.components = new System.ComponentModel.Container();
             System.Windows.Forms.GroupBox PomTimerBox;
             this.StatusLabel = new System.Windows.Forms.Label();
-            this.BtnPauseResume = new System.Windows.Forms.Button();
-            this.BtnStartStop = new System.Windows.Forms.Button();
+            this.BtnReset = new System.Windows.Forms.Button();
+            this.BtnStartPause = new System.Windows.Forms.Button();
             this.PomTimerDisplayLabel = new System.Windows.Forms.Label();
             this.PomSettingsBox = new System.Windows.Forms.GroupBox();
             this.SetIntervalNUD = new System.Windows.Forms.NumericUpDown();
@@ -57,8 +57,8 @@ namespace CSCI330_ProjectCatalyst
             // PomTimerBox
             // 
             PomTimerBox.Controls.Add(this.StatusLabel);
-            PomTimerBox.Controls.Add(this.BtnPauseResume);
-            PomTimerBox.Controls.Add(this.BtnStartStop);
+            PomTimerBox.Controls.Add(this.BtnReset);
+            PomTimerBox.Controls.Add(this.BtnStartPause);
             PomTimerBox.Controls.Add(this.PomTimerDisplayLabel);
             PomTimerBox.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             PomTimerBox.Location = new System.Drawing.Point(13, 13);
@@ -78,29 +78,30 @@ namespace CSCI330_ProjectCatalyst
             this.StatusLabel.TabIndex = 3;
             this.StatusLabel.Text = "Pomodoro";
             this.StatusLabel.Visible = false;
+            this.StatusLabel.TextChanged += new System.EventHandler(this.StatusLabel_TextChanged);
             // 
-            // BtnPauseResume
+            // BtnReset
             // 
-            this.BtnPauseResume.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.BtnPauseResume.Location = new System.Drawing.Point(7, 274);
-            this.BtnPauseResume.Name = "BtnPauseResume";
-            this.BtnPauseResume.Size = new System.Drawing.Size(407, 40);
-            this.BtnPauseResume.TabIndex = 2;
-            this.BtnPauseResume.Text = "Pause";
-            this.BtnPauseResume.UseVisualStyleBackColor = true;
-            this.BtnPauseResume.Visible = false;
-            this.BtnPauseResume.Click += new System.EventHandler(this.BtnPauseResume_Click);
+            this.BtnReset.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.BtnReset.Location = new System.Drawing.Point(7, 274);
+            this.BtnReset.Name = "BtnReset";
+            this.BtnReset.Size = new System.Drawing.Size(407, 40);
+            this.BtnReset.TabIndex = 2;
+            this.BtnReset.Text = "Reset";
+            this.BtnReset.UseVisualStyleBackColor = true;
+            this.BtnReset.Visible = false;
+            this.BtnReset.Click += new System.EventHandler(this.BtnReset_Click);
             // 
-            // BtnStartStop
+            // BtnStartPause
             // 
-            this.BtnStartStop.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.BtnStartStop.Location = new System.Drawing.Point(7, 228);
-            this.BtnStartStop.Name = "BtnStartStop";
-            this.BtnStartStop.Size = new System.Drawing.Size(407, 40);
-            this.BtnStartStop.TabIndex = 1;
-            this.BtnStartStop.Text = "Start";
-            this.BtnStartStop.UseVisualStyleBackColor = true;
-            this.BtnStartStop.Click += new System.EventHandler(this.BtnStartStop_Click);
+            this.BtnStartPause.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.BtnStartPause.Location = new System.Drawing.Point(7, 228);
+            this.BtnStartPause.Name = "BtnStartPause";
+            this.BtnStartPause.Size = new System.Drawing.Size(407, 40);
+            this.BtnStartPause.TabIndex = 1;
+            this.BtnStartPause.Text = "Start";
+            this.BtnStartPause.UseVisualStyleBackColor = true;
+            this.BtnStartPause.Click += new System.EventHandler(this.BtnStartPause_Click);
             // 
             // PomTimerDisplayLabel
             // 
@@ -175,7 +176,7 @@ namespace CSCI330_ProjectCatalyst
             0,
             0});
             this.SetLongNUD.Minimum = new decimal(new int[] {
-            15,
+            1,
             0,
             0,
             0});
@@ -210,7 +211,7 @@ namespace CSCI330_ProjectCatalyst
             0,
             0});
             this.SetShortNUD.Minimum = new decimal(new int[] {
-            5,
+            1,
             0,
             0,
             0});
@@ -273,14 +274,13 @@ namespace CSCI330_ProjectCatalyst
             // 
             // Timer
             // 
-            this.Timer.Interval = 1000;
             this.Timer.Tick += new System.EventHandler(this.Timer_Tick);
             // 
             // Pomodoro
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.ClientSize = new System.Drawing.Size(704, 521);
             this.Controls.Add(this.PomSettingsBox);
             this.Controls.Add(PomTimerBox);
@@ -305,8 +305,8 @@ namespace CSCI330_ProjectCatalyst
         #endregion
         private System.Windows.Forms.GroupBox PomSettingsBox;
         private System.Windows.Forms.Label PomTimerDisplayLabel;
-        private System.Windows.Forms.Button BtnStartStop;
-        private System.Windows.Forms.Button BtnPauseResume;
+        private System.Windows.Forms.Button BtnStartPause;
+        private System.Windows.Forms.Button BtnReset;
         private System.Windows.Forms.Label StatusLabel;
         private System.Windows.Forms.Timer Timer;
         private System.Windows.Forms.Label SetShortLabel;
