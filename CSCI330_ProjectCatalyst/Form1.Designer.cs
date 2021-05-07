@@ -38,7 +38,7 @@ namespace CSCI330_ProjectCatalyst
             // 
             // TodoButton
             // 
-            // this.TodoButton.Enabled = false;
+            this.TodoButton.Enabled = false;
             this.TodoButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.TodoButton.ForeColor = System.Drawing.SystemColors.ControlText;
             this.TodoButton.Location = new System.Drawing.Point(32, 16);
